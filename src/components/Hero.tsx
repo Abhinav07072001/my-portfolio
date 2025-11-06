@@ -293,25 +293,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import { ArrowDown, Download, Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import profilePic from "../assets/Abhi-Image.jpg";
 
@@ -323,15 +305,16 @@ const Hero = () => {
     }
   };
 
-  const viewResume = () => {
-    window.open('https://drive.google.com/file/d/1kSac_ygMcAZFbnVty8mjNlYWRc2Fuwbn/view', '_blank');
-  };
+  const handleResume = () => {
+    const resumeViewLink = 'https://drive.google.com/file/d/1kSac_ygMcAZFbnVty8mjNlYWRc2Fuwbn/view';
+    const resumeDownloadLink = 'https://drive.google.com/uc?export=download&id=1kSac_ygMcAZFbnVty8mjNlYWRc2Fuwbn';
+    
+    // Open the resume in a new tab
+    window.open(resumeViewLink, '_blank');
 
-  const downloadResume = () => {
-    // Convert Google Drive view link to direct download link
-    const downloadLink = 'https://drive.google.com/uc?export=download&id=1kSac_ygMcAZFbnVty8mjNlYWRc2Fuwbn';
+    // Trigger the download automatically
     const link = document.createElement('a');
-    link.href = downloadLink;
+    link.href = resumeDownloadLink;
     link.download = 'AbhinavDixitResume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -350,16 +333,15 @@ const Hero = () => {
                 alt="Abhinav Dixit"
                 className="w-40 h-40 mx-auto rounded-full shadow-2xl ring-4 ring-white object-cover"
                 onError={(e) => {
-                  // Fallback to initials if image fails to load
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
                   const parent = target.parentElement;
                   if (parent) {
-                    parent.textContent = 'AKJ';
+                    parent.textContent = 'AD';
                   }
                 }}
               />
-            </div> 
+            </div>
           </div>
 
           {/* Main Content */}
@@ -370,19 +352,19 @@ const Hero = () => {
                 Abhinav Dixit
               </span>
             </h1>
-            
+
             <h2 className="text-2xl md:text-3xl text-gray-700 font-semibold">
               Full-Stack Software Engineer
             </h2>
-            
+
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Enthusiastic about developing robust web applications and implementing modern tech solutions.
-Experienced in full-stack development, cloud platforms, and optimizing seamless user experiences.
+              Experienced in full-stack development, cloud platforms, and optimizing seamless user experiences.
             </p>
 
             {/* Key Highlights */}
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              {['React & Node.js', 'Cloud', 'Full-Stack Development', 'Mongo&Firebase'].map((skill, index) => (
+              {['React & Node.js', 'Cloud', 'Full-Stack Development', 'Mongo & Firebase'].map((skill, index) => (
                 <div key={index} className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-200 text-blue-700 font-medium shadow-sm">
                   {skill}
                 </div>
@@ -392,22 +374,14 @@ Experienced in full-stack development, cloud platforms, and optimizing seamless 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">
               <Button
-                onClick={viewResume}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <ExternalLink className="mr-2 h-5 w-5" />
-                View Resume
-              </Button>
-              
-              <Button
                 variant="outline"
-                onClick={downloadResume}
+                onClick={handleResume}
                 className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 text-lg transition-all duration-300"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
               </Button>
-              
+
               <Button
                 variant="outline"
                 onClick={scrollToAbout}
