@@ -642,7 +642,7 @@ const Projects = () => {
       description: 'SkillSwap is an interactive web platform that connects learners and experts to exchange knowledge and skills.The integrated dashboard allows seamless session management, content sharing, and skill exploration — empowering a collaborative community-driven learning experience.',
       // longDescription: 'Contributed to the development of an AI-powered resume-building platform using Next.js, React.js, TypeScript, and Tailwind CSS. Integrated OpenAI and Gemini APIs to enhance resume content with professional phrasing, tailored summaries, and skill suggestions.',
       technologies: ['React', 'HTML', 'Tailwind CSS', 'JavaScript','FireBase'],
-      githubUrl: 'https://github.com/Abhinav07072001/SkillSwap-frontend/tree/master/skill-swap-frontend',
+      githubUrl: 'https://github.com/Abhinav07072001/SkillSwap-frontend',
       liveUrl: 'https://skillimprove.netlify.app/',
       image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop&crop=center',
       icon: <Code className="h-6 w-6" />,
