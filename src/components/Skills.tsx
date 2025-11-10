@@ -248,9 +248,10 @@ const Skills = () => {
     },
     {
       name: 'Tailwind CSS',
-      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
       category: 'Frontend'
     },
+
     {
       name: 'Express.js',
       image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
