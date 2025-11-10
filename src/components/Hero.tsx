@@ -175,8 +175,20 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="flex flex-col justify-center items-center bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative min-h-[90vh] pt-20 sm:pt-24 md:pt-28"
+      className="flex flex-col justify-center items-center bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative min-h-[90vh] pt-[4.5rem] sm:pt-[5rem] md:pt-[3rem] lg:pt-[6rem]"
     >
+      {/* ✅ Custom iPad spacing fix */}
+      <style jsx>{`
+        @media only screen 
+          and (min-device-width: 768px)
+          and (max-device-width: 1366px)
+          and (-webkit-min-device-pixel-ratio: 2) {
+          section#home {
+            padding-top: 2rem !important;
+          }
+        }
+      `}</style>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="text-center">
           {/* Profile Image */}
